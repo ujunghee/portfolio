@@ -1,0 +1,14 @@
+.splash-wrap {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .splash {
+        width: 15vw;
+        min-width: 7rem;
+        max-width: 19.4rem;
+        .progressbar-text {
+        }
+    }
+}
