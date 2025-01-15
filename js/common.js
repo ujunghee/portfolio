@@ -3,11 +3,10 @@ const box = document.querySelector('.splash-wrap')
 
 var bar = new ProgressBar.Circle('.splash', {
     strokeWidth: .3,
-    trailColor: '#333333',
     trailWidth: .3,
+    trailColor: '#333333',
     easing: 'easeInOut',
     duration: 2000,
-    svgStyle: null,
     text: {
       value: '',
       alignToBottom: false,
@@ -18,8 +17,6 @@ var bar = new ProgressBar.Circle('.splash', {
         position: 'absolute',
         left: '50%',
         top: '50%',
-        padding: 0,
-        margin: 0,
         transform: {
             prefix: true,
             value: 'translate(-50%, -50%)'
@@ -36,8 +33,7 @@ var bar = new ProgressBar.Circle('.splash', {
       } else {
         bar.setText(value + '%');
         setTimeout(() => {
-          box.style.opacity = "0"
-          box.style.transform = "translate3d(0, -.3rem, 0)"
+          box.style.opacity = "0";
           box.style.visibility ="hidden";
         }, 3000)
         setTimeout(() => {
