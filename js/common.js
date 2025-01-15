@@ -1,4 +1,6 @@
 
+const box = document.querySelector('.splash-wrap')
+
 var bar = new ProgressBar.Circle('.splash', {
     strokeWidth: .3,
     trailColor: '#333333',
@@ -33,10 +35,16 @@ var bar = new ProgressBar.Circle('.splash', {
         bar.setText('');
       } else {
         bar.setText(value + '%');
+        setTimeout(() => {
+          box.style.opacity = "0"
+          box.style.transform = "translate3d(0, -.3rem, 0)"
+          box.style.visibility ="hidden";
+        }, 3000)
+        setTimeout(() => {
+          box.style.display = "none"
+        }, 3500)
       }
-  
       bar.text.style.color = state.color;
     }
   });
-  
   bar.animate(1.0);

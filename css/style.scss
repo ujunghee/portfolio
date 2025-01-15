@@ -4,6 +4,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 1;
+    transition: 0.3s cubic-bezier(0.78, -0.01, 0.25, 1);
     .splash {
         width: 15vw;
         min-width: 7rem;
