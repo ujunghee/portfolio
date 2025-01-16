@@ -10,7 +10,20 @@
         width: 15vw;
         min-width: 7rem;
         max-width: 19.4rem;
-        .progressbar-text {
+    }
+}
+
+header {
+    .logo {
+        display: flex;
+        span {
+            font-family: 'safirobold';
+            color: map-get($color, whtie);
         }
+    }
+    button {
+        font-family: 'safirobold';
+        border: none;
+        background-color: none;
     }
 }

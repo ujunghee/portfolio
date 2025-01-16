@@ -11,4 +11,13 @@
   width: 15vw;
   min-width: 7rem;
   max-width: 19.4rem;
+}
+header .logo {
+  display: flex;
+}
+header span {
+  font-family: "safirobold";
+}
+header button {
+  font-family: "safirobold";
 }/*# sourceMappingURL=style.css.map */
