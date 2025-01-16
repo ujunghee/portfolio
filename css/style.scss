@@ -1,3 +1,5 @@
+@import "common";
+
 .splash-wrap {
     width: 100%;
     height: 100vh;
@@ -14,16 +16,36 @@
 }
 
 header {
+    padding: 0rem 8rem;
+    box-sizing: border-box;
+    .navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 10vh;
+        min-height:5rem;
+        
+    }
+    .menu {
+        display: flex;
+        gap: 2vw;
+        li {
+
+        }
+    }
     .logo {
         display: flex;
         span {
             font-family: 'safirobold';
             color: map-get($color, whtie);
+            text-transform: uppercase;
         }
     }
     button {
         font-family: 'safirobold';
         border: none;
-        background-color: none;
+        background-color: inherit;
+        color: map-get($color, whtie);
+        text-transform: uppercase;
     }
 }
