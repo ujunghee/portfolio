@@ -1,3 +1,59 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+main, menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: "safirobold", "SUIT", sans-serif;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+  display: block;
+}
+
+*[hidden] {
+  display: none;
+  font-size: 62.5%;
+}
+
+body {
+  line-height: 1;
+  background-color: #0E0E0E;
+}
+
+menu, ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 스플래시 */
 .splash-wrap {
   width: 100%;
   height: 100vh;
@@ -12,12 +68,34 @@
   min-width: 7rem;
   max-width: 19.4rem;
 }
+
+header {
+  padding: 0rem 8rem;
+  box-sizing: border-box;
+}
+header .navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 10vh;
+  min-height: 5rem;
+}
+header .menu {
+  display: flex;
+  gap: 2vw;
+}
 header .logo {
   display: flex;
 }
-header span {
+header .logo span {
   font-family: "safirobold";
+  color: #fff;
+  text-transform: uppercase;
 }
 header button {
   font-family: "safirobold";
+  border: none;
+  background-color: inherit;
+  color: #fff;
+  text-transform: uppercase;
 }/*# sourceMappingURL=style.css.map */
