@@ -3,6 +3,16 @@ const logoTxtBox = document.querySelector('.logo')
 const body = document.querySelector('body')
 const cursorbox = document.querySelector("cursor-item")
 
+
+//  로딩시 커서 숨기기 
+const style = document.createElement('style');
+style.textContent = `
+    * {
+        cursor: none !important;
+    }
+`;
+document.head.appendChild(style);
+
 var bar = new ProgressBar.Circle('.splash', {
     strokeWidth: 1,
     trailWidth: 1,
@@ -39,9 +49,6 @@ var bar = new ProgressBar.Circle('.splash', {
           splashBox.style.opacity = "0";
           splashBox.style.visibility ="hidden";
         }, 2000)
-        setTimeout(() => {
-          splashBox.style.display = "none"
-        }, 2500)
       }
       bar.text.style.color = state.color;
     }
@@ -50,7 +57,8 @@ var bar = new ProgressBar.Circle('.splash', {
 
 
   const logoSpans = document.querySelectorAll('.logo span');
-  
+  const menuLis = document.querySelectorAll('.menu li button')
+
   // 슬라이드 업 클래스 추가
   setTimeout(() => {
     logoTxtBox.classList.add('slide-up');
@@ -75,7 +83,7 @@ var bar = new ProgressBar.Circle('.splash', {
   // span 사이즈 줄이기
   setTimeout(() => {
     logoSpans.forEach(span => {
-        span.style.fontSize = '1.2vw'
+        span.style.fontSize = 'clamp(1.2rem, 3vw, 1.2vw)'
     });
   }, 5000);
 
@@ -87,7 +95,17 @@ var bar = new ProgressBar.Circle('.splash', {
         logoTxtBox.style.position = 'initial'
         logoTxtBox.style.transform = 'initial'
         body.style.overflow = "auto"
-      }, 80 * index); 
+      }, 30 * index); 
     });
   }, 5500);
 
+  // 헤더로 이동
+  setTimeout(() => {
+    menuLis.forEach((buttons, index) => {
+      setTimeout(() => {
+        buttons.style.opacity = '1'
+        buttons.style.visibility = 'visible'
+        buttons.style.transform = 'translate3D(0, 0, 0)'
+      }, 100 * index); 
+    });
+  }, 6500);
