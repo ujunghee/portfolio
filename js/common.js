@@ -17,7 +17,7 @@ function callback() {
     window.requestAnimationFrame(callback);
 }
     
-const buttons = document.querySelectorAll('button , a, span')
+const buttons = document.querySelectorAll('button , a, span, p, h1, h2')
 
 buttons.forEach(button => {
     button.addEventListener('mouseout', () => {

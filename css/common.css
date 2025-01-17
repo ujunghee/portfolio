@@ -25,6 +25,9 @@ footer, header, hgroup, main, menu, nav, section {
 
 *[hidden] {
   display: none;
+}
+
+* {
   font-size: 62.5%;
 }
 
