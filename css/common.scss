@@ -44,11 +44,15 @@ footer, header, hgroup, main, menu, nav, section {
 }
 *[hidden] {
     display: none;
-    font-size: 62.5%;
+    font-size: 62.5%;  
+}
+* {
+    cursor: none;
 }
 body {
 	line-height: 1;
     background-color: map-get($color, black-01);
+    overflow: hidden;
 }
 menu, ol, ul {
 	list-style: none;
@@ -66,4 +70,20 @@ table {
 	border-spacing: 0;
 }
 
-/* 스플래시 */
+// 마우스 커서
+.cursor-item {
+    position: absolute;
+    width: 5rem;
+    height: 5rem;
+    background: radial-gradient(circle, rgba(131,136,255,1) -50%, rgba(148,187,233,0) 60%);
+    background-color: initial !important;
+    border-radius: 50%;
+    top:0;
+    z-index: 10000;
+    left: 0;
+    pointer-events: none; 
+}
+
+ .cursor-item.hover {
+    transform: rotate(1.6);
+}
