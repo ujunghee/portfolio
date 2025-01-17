@@ -1,4 +1,3 @@
-@charset "UTF-8";
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -29,9 +28,14 @@ footer, header, hgroup, main, menu, nav, section {
   font-size: 62.5%;
 }
 
+* {
+  cursor: none;
+}
+
 body {
   line-height: 1;
   background-color: #0E0E0E;
+  overflow: hidden;
 }
 
 menu, ol, ul {
@@ -53,4 +57,19 @@ table {
   border-spacing: 0;
 }
 
-/* 스플래시 *//*# sourceMappingURL=common.css.map */
+.cursor-item {
+  position: absolute;
+  width: 5rem;
+  height: 5rem;
+  background: radial-gradient(circle, rgb(131, 136, 255) -50%, rgba(148, 187, 233, 0) 60%);
+  background-color: initial !important;
+  border-radius: 50%;
+  top: 0;
+  z-index: 10000;
+  left: 0;
+  pointer-events: none;
+}
+
+.cursor-item.hover {
+  transform: rotate(1.6);
+}/*# sourceMappingURL=common.css.map */

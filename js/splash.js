@@ -1,5 +1,6 @@
 const splashBox = document.querySelector('.splash-wrap')
 const logoTxtBox = document.querySelector('.logo')
+const body = document.querySelector('body')
 
 var bar = new ProgressBar.Circle('.splash', {
     strokeWidth: .3,
@@ -49,61 +50,43 @@ var bar = new ProgressBar.Circle('.splash', {
 
   const logoSpans = document.querySelectorAll('.logo span');
   
-  // splash 애니메이션이 끝난 후 실행
+  // 슬라이드 업 클래스 추가
   setTimeout(() => {
     logoTxtBox.classList.add('slide-up');
     
-    // 각 span에 순차적으로 애니메이션 적용
     logoSpans.forEach((span, index) => {
       setTimeout(() => {
         span.classList.add('slide-up');
         span.style.transform = 'translate3d(0, 0, 0)'
-      }, 80 * index); // 각 글자마다 0.1초 딜레이
+      }, 80 * index);
     });
   }, 2500);
 
-  // splash 애니메이션이 끝난 후 실행
+  // span태그 
   setTimeout(() => {
-    logoTxtBox.classList.add('slide-up');
-    
-    // 각 span에 순차적으로 애니메이션 적용
     logoSpans.forEach((span, index) => {
       setTimeout(() => {
-        span.classList.add('slide-up');
         span.style.transform = 'translate3d(0, -40vh, 0)'
-      }, 80 * index); // 각 글자마다 0.1초 딜레이
+      }, 80 * index); 
     });
   }, 4000);
 
-  // splash 애니메이션이 끝난 후 실행
+  // span 사이즈 줄이기
   setTimeout(() => {
-    logoTxtBox.classList.add('slide-up');
-    
-    // 각 span에 순차적으로 애니메이션 적용
-    logoSpans.forEach((span, index) => {
-      setTimeout(() => {
-
-        span.classList.add('slide-up');
+    logoSpans.forEach(span => {
         span.style.fontSize = '1.2vw'
-      }, 80 * index); // 각 글자마다 0.1초 딜레이
     });
   }, 5000);
 
-
-  // splash 애니메이션이 끝난 후 실행
+  // 헤더로 이동
   setTimeout(() => {
-    logoTxtBox.classList.add('slide-up');
-    
-    // 각 span에 순차적으로 애니메이션 적용
     logoSpans.forEach((span, index) => {
       setTimeout(() => {
-
-        span.classList.add('slide-up');
         span.style.transform = 'initial'
-        span.style.fontSize = '1.2vw'
         logoTxtBox.style.position = 'initial'
         logoTxtBox.style.transform = 'initial'
-      }, 80 * index); // 각 글자마다 0.1초 딜레이
+        body.style.overflow = "auto"
+      }, 80 * index); 
     });
   }, 5500);
 
