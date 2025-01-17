@@ -15,9 +15,9 @@
     opacity: 1;
     transition: 0.3s cubic-bezier(0.78, -0.01, 0.25, 1);
     .splash {
-        width: 15vw;
+        width: 10vw;
         min-width: 7rem;
-        max-width: 19.4rem;
+        max-width: 12rem;
     }
 }
 
@@ -48,9 +48,10 @@ header {
         span {
             font-family: 'safiromedium';
             color: map-get($color, whtie);
-            font-size: 20.1vw;
+            font-size: 16.8vw;
+            text-transform: uppercase;
             opacity: 0;
-            transform: translateY(50px);
+            transform: translateY(20rem);
             transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
             transition-delay: 0.2s; 
         }
