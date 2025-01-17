@@ -28,10 +28,6 @@ footer, header, hgroup, main, menu, nav, section {
   font-size: 62.5%;
 }
 
-* {
-  cursor: url(../img/arrow-cursor.svg) 2 2, auto !important;
-}
-
 body {
   line-height: 1;
   background-color: #0E0E0E;
@@ -55,22 +51,4 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
-}
-
-.cursor-item {
-  position: absolute;
-  width: 5rem;
-  height: 5rem;
-  background: radial-gradient(circle, rgb(131, 136, 255) -50%, rgba(148, 187, 233, 0) 60%);
-  background-color: initial !important;
-  border-radius: 50%;
-  top: 0;
-  z-index: 10000;
-  left: 0;
-  pointer-events: none;
-  transition: transform 0.2s ease-out;
-}
-
-.cursor-item.hover {
-  transform: rotate(1.6);
 }/*# sourceMappingURL=common.css.map */
