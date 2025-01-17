@@ -1,10 +1,11 @@
 const splashBox = document.querySelector('.splash-wrap')
 const logoTxtBox = document.querySelector('.logo')
 const body = document.querySelector('body')
+const cursorbox = document.querySelector("cursor-item")
 
 var bar = new ProgressBar.Circle('.splash', {
-    strokeWidth: .3,
-    trailWidth: .3,
+    strokeWidth: 1,
+    trailWidth: 1,
     trailColor: '#333333',
     easing: 'easeInOut',
     duration: 2000,
@@ -14,7 +15,7 @@ var bar = new ProgressBar.Circle('.splash', {
       style: {
         color: '#f00',
         fontFamily: 'safiroregular',
-        fontSize: '3vw',
+        fontSize: '2vw',
         position: 'absolute',
         fontWeight: '500',
         left: '50%',
@@ -66,7 +67,7 @@ var bar = new ProgressBar.Circle('.splash', {
   setTimeout(() => {
     logoSpans.forEach((span, index) => {
       setTimeout(() => {
-        span.style.transform = 'translate3d(0, -40vh, 0)'
+        span.style.transform = 'translate3d(0, -30vh, 0)'
       }, 80 * index); 
     });
   }, 4000);

@@ -29,7 +29,7 @@ footer, header, hgroup, main, menu, nav, section {
 }
 
 * {
-  cursor: none;
+  cursor: url(../img/arrow-cursor.svg) 2 2, auto !important;
 }
 
 body {
@@ -68,6 +68,7 @@ table {
   z-index: 10000;
   left: 0;
   pointer-events: none;
+  transition: transform 0.2s ease-out;
 }
 
 .cursor-item.hover {

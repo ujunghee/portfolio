@@ -8,9 +8,9 @@ document.addEventListener('mousemove', (e) => {
     const width = cursorWidth / 2
     const height = coursorHeight / 2
     
-    cursor.style.transform = `translate(${e.clientX - width}px, ${e.clientY - height}px) scale(1)`
+    cursor.style.transform = `translate(${e.clientX - width}px, ${e.clientY - height}px) scale(${cursor.classList.contains('hover') ? 2 : 1})`
 })
-
+    
 const buttons = document.querySelectorAll('button , a, span')
 
 buttons.forEach(button => {
