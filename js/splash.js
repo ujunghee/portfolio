@@ -25,7 +25,7 @@ var bar = new ProgressBar.Circle('.splash', {
       style: {
         color: '#f00',
         fontFamily: 'safiroregular',
-        fontSize: '2vw',
+        fontSize: '1.5vw',
         position: 'absolute',
         fontWeight: '500',
         left: '50%',
@@ -76,12 +76,12 @@ var bar = new ProgressBar.Circle('.splash', {
           item.style.transform = transform
           logoTxtBox.style.position = 'initial'
           logoTxtBox.style.transform = 'initial'
-          body.style.overflow = "auto"
         }
         if(number === 4) {
           item.style.transform = transform 
           item.style.opacity = '1'
           item.style.visibility = 'visible'
+          body.style.overflow = "auto"
           // ''
         }
       }, ms * index)
