@@ -35,8 +35,6 @@ requestAnimationFrame(raf)
 
 //버튼 이벤트    
 const buttons = document.querySelectorAll('button , a, span, p, h1, h2')
-const headerButton = document.querySelector('header .menu li button')
-const headerSpans = document.querySelectorAll('header .menu li span')
 
 buttons.forEach(button => {
     button.addEventListener('mouseout', () => {
@@ -50,20 +48,18 @@ buttons.forEach(button => {
     }
 })
 
-headerButton.addEventListener('mouseout', () => {
-    headerSpans.forEach(span => {
+const headerButton = document.querySelectorAll('header .menu li button')
+
+headerButton.forEach(button => {
+    const parentLi = button.closest('li')
+    const span = parentLi.querySelector('span')
+
+    button.addEventListener('mouseout', () =>{
         span.style.width = "0"
     })
-})
-headerButton.addEventListener('mouseover', () => {
-            headerSpans.forEach(span => {
-                span.style.width = "calc(100% - 1rem)"
-            })
-})
 
-// headerButtons.forEach(item => {
-//     if(item) {
-//         item.addEventListener('mouseover', () => {
-//         })
-//     }
-// })
+    button.addEventListener('mouseover', () =>{
+        span.style.width = "calc(100% - 1rem)"
+    })
+
+})
