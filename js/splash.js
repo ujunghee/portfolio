@@ -25,7 +25,7 @@ var bar = new ProgressBar.Circle('.splash', {
       style: {
         color: '#f00',
         fontFamily: 'safiroregular',
-        fontSize: '1.5vw',
+        fontSize: 'clamp(1.4rem, 3vw, 1.5vw)',
         position: 'absolute',
         fontWeight: '500',
         left: '50%',

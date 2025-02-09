@@ -17,29 +17,38 @@ setTimeout(() => {
 // 가로스크롤
 // 페이지 로드 시와 리사이즈 시 높이 계산
 
-function setParentHeight() {
-  const dimCount = document.querySelectorAll('.dim').length;
+function dimBox() {
+  const dims = document.querySelectorAll('.dim');
+  let totalWidth = 0;
+
+  dims.forEach(dim => {
+    totalWidth += dim.offsetWidth;
+  })
+  
   const stickyParent = document.querySelector('.sticky-parent');
-  stickyParent.style.height = `${dimCount * 100}vh`;
+  stickyParent.style.height = `${totalWidth}px`; 
 }
 
 // 이벤트 리스너 등록
-window.addEventListener('load', setParentHeight);
-window.addEventListener('resize', horizontalScroll, setParentHeight)
+window.addEventListener('load', dimBox)
+window.addEventListener('resize', () => {
+  horizontalScroll(),
+  dimBox()
+})
 
 // 기존의 가로 스크롤 함수
 function horizontalScroll() {
   let sticky = document.querySelector('.sticky')
   let stickyParent = document.querySelector('.sticky-parent')
   
-  let scrollWidth = sticky.scrollWidth;
+  let scrollWidth = sticky.scrollWidth
   let verticalScrollHeight = stickyParent.getBoundingClientRect().height - sticky.getBoundingClientRect().height
   let stickyPosition = sticky.getBoundingClientRect().top
   
   if(stickyPosition > 1) {
     return
   } else {
-    let scrolled = stickyParent.getBoundingClientRect().top;
+    let scrolled = stickyParent.getBoundingClientRect().top
     sticky.scrollLeft = (scrollWidth / verticalScrollHeight) * (-scrolled) * 0.85
   }
 }
