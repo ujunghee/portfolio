@@ -4,20 +4,39 @@ const cursorWidth = cursor.offsetWidth
 const cursorHeight = cursor.offsetHeight
 
 document.addEventListener('mousemove', (e) => {
-    // console.log(e.clientX, e.clientY);
+    // console.log(e.clientX, e.clientY)
     const width = cursorWidth / 2
     const height = cursorHeight / 2
     
     cursor.style.transform = `translate(${e.clientX - width}px, ${e.clientY - height}px) scale(${cursor.classList.contains('hover') ? 2 : 1})`
 
-    callback();
+    callback()
 })
 
 function callback() {
-    window.requestAnimationFrame(callback);
+    window.requestAnimationFrame(callback)
 }
-    
+// 새로고침 시
+window.onload = function() {
+    setTimeout(function() {
+        scrollTo(0, 0)
+    }, 100)
+}
+
+// 스크롤 부드러운 js 라이브러리 
+const lenis = new Lenis()
+
+function raf(time) {
+  lenis.raf(time)
+  requestAnimationFrame(raf)
+}
+
+requestAnimationFrame(raf)
+
+//버튼 이벤트    
 const buttons = document.querySelectorAll('button , a, span, p, h1, h2')
+const headerButton = document.querySelector('header .menu li button')
+const headerSpans = document.querySelectorAll('header .menu li span')
 
 buttons.forEach(button => {
     button.addEventListener('mouseout', () => {
@@ -29,4 +48,22 @@ buttons.forEach(button => {
            cursor.classList.add("hover")
         })
     }
-});
+})
+
+headerButton.addEventListener('mouseout', () => {
+    headerSpans.forEach(span => {
+        span.style.width = "0"
+    })
+})
+headerButton.addEventListener('mouseover', () => {
+            headerSpans.forEach(span => {
+                span.style.width = "calc(100% - 1rem)"
+            })
+})
+
+// headerButtons.forEach(item => {
+//     if(item) {
+//         item.addEventListener('mouseover', () => {
+//         })
+//     }
+// })

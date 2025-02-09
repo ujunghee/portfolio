@@ -19,7 +19,7 @@
     background-color: map-get($color , black-01);
     justify-content: center;
     opacity: 1;
-    transition: 0.3s cubic-bezier(0.78, -0.01, 0.25, 1);
+    transition: $transition-ease-in-out-03;
     .splash {
         width: 10vw;
         min-width: 7rem;
@@ -33,15 +33,15 @@
     z-index: 3;
     position: fixed;
     background-color: map-get($color , black-01);
-    transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
+    transition: $transition-ease-in-out-06;
     .splash-logo {
         display: flex;
         position: absolute;
         bottom: 0;
         left: 0;
-        transform: translateY(30px);
+        transform: translateY(2vh);
         // opacity: 0;
-        transition: all 0.4s ease;
+        transition: $transition-ease-in-out-03;
         overflow: hidden;
         span {
             font-family: 'safiroregular';
@@ -50,7 +50,7 @@
             color: map-get($color, whtie);
             font-size: 16.8vw;
             transform: translateY(30vh);
-            transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
+            transition: $transition-ease-in-out-06;
             transition-delay: 0.2s; 
             z-index: 3;
         }
@@ -61,7 +61,7 @@
 header {
     padding: 0rem 8rem;
     box-sizing: border-box;
-    transition: .3s;
+    transition: $transition-ease-in-out-03;
     @include respond-to(tablet) {
         padding: 0rem 1.6rem;
         .menu {
@@ -86,36 +86,28 @@ header {
         li {
             overflow: hidden;
             position: relative;
-            &:before {
-                content: "";
-                width: 0;
-                transition:all 0.6s cubic-bezier(0.99, -0.01, 0.17, 1);
+            button {
+                font-family: 'safiroregular';
+                border: none;
+                background-color: inherit;
+                color: map-get($color, whtie);
+                transform: translate3d(0px, -2rem, 0);
+                font-size: clamp(1.6rem, 3vw, 1.2vw);
+                cursor: pointer;
+                opacity: 0;
+                visibility: hidden;
+                transition: $transition-ease-in-out-06;
+            }
+            span {
                 position: absolute;
                 bottom: 0;
+                width: calc(100% - 1rem);
+                height: 0.1rem;
+                background: #fff;
                 left: 50%;
                 transform: translateX(-50%);
+                transition: $transition-ease-in-out-06;
             }
-            &:hover {
-                &:before {
-                    content: '';
-                    display: block;
-                    width: calc(100% - 1.2rem);
-                    height: .1rem;
-                    background: #fff;
-                }
-            }
-        }
-        button {
-            font-family: 'safiroregular';
-            border: none;
-            background-color: inherit;
-            color: map-get($color, whtie);
-            transform: translate3d(0px, -2rem, 0);
-            font-size: clamp(1.6rem, 3vw, 1.2vw);
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
         }
     }
     .logo {
@@ -125,7 +117,7 @@ header {
         left: 0;
         transform: translateY(50px);
         opacity: 0;
-        transition: all 0.4s ease;
+        transition: $transition-ease-in-out-03;
         overflow: hidden;
         span {
             font-family: 'safiromedium';
@@ -134,7 +126,7 @@ header {
             opacity: 0;
             font-size: clamp(1.6rem, 3vw, 1.2vw);
             transform: translateY(-20rem);
-            transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
+            transition: $transition-ease-in-out-06;
             transition-delay: 0.2s; 
             z-index: 3;
         }
@@ -161,7 +153,7 @@ header {
     top:0;
     left: 0;
     pointer-events: none; 
-    transition: transform .2s ease-out; 
+    transition: $transition-ease-in-out-03; 
     z-index: 10;
     &:hover {
         mix-blend-mode: difference;
@@ -176,12 +168,16 @@ header {
     display: flex;
     align-items: center;
     padding: 0rem 8rem;
+    transition: $transition-ease-in-out-03;
     justify-content: space-between;
     box-sizing: border-box;
+    @include respond-to(tablet) {
+        padding: 0rem 1.6rem;
+    }
     .left {
         overflow: hidden;
         h2 {
-            transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
+            transition: $transition-ease-in-out-06;
             transform: translate3d(0, 10vh, 0);
             color: map-get($color , whtie);
             font-size: clamp(1.4rem, 5vw, 5vw);
@@ -194,7 +190,7 @@ header {
         gap: .9rem;
         overflow: hidden;
         p {
-            transition: all 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
+            transition:$transition-ease-in-out-06;
             transform: translate3d(0, 10vh, 0);
             font-family: 'safiroregular';
             color: map-get($color , whtie);
@@ -214,11 +210,14 @@ header {
     }
     .dim{
       display: block;
+      width:100vh;
+      flex: 1 0 100%;
       min-width: 100vw;
       height: 100vh;
     }
     .horizontal{
       display: flex;
+      flex-direction: row;
     }
     .br{
       outline: solid;
