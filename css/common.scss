@@ -12,7 +12,17 @@ $color: (
     gray-03:#353535
 );
 
+$fontWeight : (
+    font-300: 300,
+    font-400: 400,
+    font-500: 500,
+    font-600: 600,
+    font-700: 700,
+    font-800: 800
+);
+
 $fontSize: (
+    font-70: 7.6rem,
     font-50: 5rem,
     font-46: 4.6rem,
     font-34: 3.4rem,
@@ -20,6 +30,7 @@ $fontSize: (
     font-22: 2.2rem,
     font-20: 2rem,
     font-16: 1.6rem, 
+    font-14: 1.4rem, 
 );
 
 html, body, div, span, applet, object, iframe,
@@ -70,4 +81,14 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+.blind {
+    overflow: hidden !important;
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: -1px !important;
+    color: transparent !important;
+    clip: rect(0px, 0px, 0px, 0px) !important;
 }

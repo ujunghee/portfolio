@@ -54,4 +54,14 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.blind {
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  color: transparent !important;
+  clip: rect(0px, 0px, 0px, 0px) !important;
 }/*# sourceMappingURL=common.css.map */

@@ -15,8 +15,8 @@ setTimeout(() => {
 }, 7100)
 
 // 가로스크롤
-// 페이지 로드 시와 리사이즈 시 높이 계산
 
+// 페이지 로드 시와 리사이즈 시 높이 계산
 function dimBox() {
   const dims = document.querySelectorAll('.dim');
   let totalWidth = 0;
