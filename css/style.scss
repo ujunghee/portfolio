@@ -212,9 +212,9 @@ header {
 
     .dim {
         display: block;
-        width: 100vh;
+        // width: 100vh;
         flex: 1 0 100%;
-        min-width: 100vw;
+        // min-width: 100vw;
         height: 100vh;
     }
 
@@ -281,8 +281,12 @@ header {
 }
 .second-section {
     height: 100%;
+    padding-left: 25rem;
     ul {
         height: 100%;
+        gap: 12rem;
+        display: flex;
+        flex-direction: row;
         li {
             height: 100%;
             border-left: .1rem solid map-get($color , gray-03);
@@ -303,9 +307,10 @@ header {
     }
     .information {
         .img {
-            width: 47rem;
-            height: 48rem;
+            width: 37rem;
+            height: 37rem;
             background-color: #535353;
+            position: relative;
             img {
                 width: 47rem;
                 height: 48rem;
@@ -313,13 +318,23 @@ header {
             }
         }   
         .img-text {
+            flex-direction: column;
+            display: flex;
+            position: absolute;
+            bottom: -6rem;
             .img-title {
+                color: map-get($color, whtie);
                 font-size: 3.4rem;
+                flex-direction: column;
+                display: flex;
+                gap: 1.2rem;
             }
             .tech {
+                color: map-get($color, whtie);
                 font-size: map-get($fontSize, font-16);
             }
             .degree {
+                color: map-get($color, whtie);
                 font-size: map-get($fontSize, font-14);
             }
         }
