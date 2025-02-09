@@ -56,6 +56,16 @@ table {
   border-spacing: 0;
 }
 
+.blind {
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  color: transparent !important;
+  clip: rect(0px, 0px, 0px, 0px) !important;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -112,6 +122,16 @@ q:before, q:after {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+}
+
+.blind {
+  overflow: hidden !important;
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  color: transparent !important;
+  clip: rect(0px, 0px, 0px, 0px) !important;
 }
 
 * {
@@ -323,6 +343,86 @@ header .logo.slide-up span {
 }
 .sticky-parent .br {
   outline: solid;
+}
+.sticky-parent .first-section {
+  padding: 0 0 0 8rem;
+  box-sizing: border-box;
+  display: flex;
+}
+.sticky-parent .first-section .right {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 10rem;
+}
+.sticky-parent .first-section .right .title {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+.sticky-parent .first-section .right .title .hidden p {
+  font-family: "SUIT", sans-serif;
+  font-size: 5rem;
+  color: #fff;
+  font-weight: 700;
+}
+.sticky-parent .first-section .right .sub-title p {
+  line-height: 2.5rem;
+  font-family: "SUIT", sans-serif;
+  font-size: 1.6rem;
+  color: #fff;
+  font-weight: 300;
+}
+.sticky-parent .more {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex: 1 0;
+}
+.sticky-parent .more img {
+  width: 100%;
+}
+
+.second-section {
+  height: 100%;
+}
+.second-section ul {
+  height: 100%;
+}
+.second-section ul li {
+  height: 100%;
+  border-left: 0.1rem solid #353535;
+  display: flex;
+  align-items: center;
+}
+.second-section .box {
+  display: flex;
+  gap: 7rem;
+  flex-direction: column;
+}
+.second-section .box .year {
+  font-family: "safiroregular";
+  font-size: 1.4rem;
+  color: #fff;
+}
+.second-section .information .img {
+  width: 47rem;
+  height: 48rem;
+  background-color: #535353;
+}
+.second-section .information .img img {
+  width: 47rem;
+  height: 48rem;
+  background-color: #535353;
+}
+.second-section .information .img-text .img-title {
+  font-size: 3.4rem;
+}
+.second-section .information .img-text .tech {
+  font-size: 1.6rem;
+}
+.second-section .information .img-text .degree {
+  font-size: 1.4rem;
 }
 
 .last {

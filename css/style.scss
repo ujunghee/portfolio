@@ -200,6 +200,7 @@ header {
 }
 
 .sticky-parent {
+
     // height: 400vh;
     .sticky {
         position: sticky;
@@ -208,21 +209,123 @@ header {
         overflow-x: hidden;
         overflow-y: hidden;
     }
-    .dim{
-      display: block;
-      width:100vh;
-      flex: 1 0 100%;
-      min-width: 100vw;
-      height: 100vh;
+
+    .dim {
+        display: block;
+        width: 100vh;
+        flex: 1 0 100%;
+        min-width: 100vw;
+        height: 100vh;
     }
-    .horizontal{
-      display: flex;
-      flex-direction: row;
+
+    .horizontal {
+        display: flex;
+        flex-direction: row;
     }
-    .br{
-      outline: solid;
+
+    .br {
+        outline: solid;
+    }
+
+    // 첫번쨰 섹션
+    .first-section {
+        padding: 0 0 0 8rem;
+        box-sizing: border-box;
+        display: flex;
+
+        .right {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            gap: 10rem;
+
+            .title {
+                display: flex;
+                flex-direction: column;
+                gap: 1.2rem;
+
+                .hidden {
+                    p {
+                        font-family: 'SUIT', sans-serif;
+                        font-size: map-get($fontSize, font-50);
+                        color: map-get($color, whtie);
+                        font-weight: map-get($fontWeight, font-700);
+                    }
+                }
+            }
+
+            .sub-title {
+
+                p {
+                    line-height: 2.5rem;
+                    font-family: 'SUIT', sans-serif;
+                    font-size: map-get($fontSize, font-16);
+                    color: map-get($color, whtie);
+                    font-weight: map-get($fontWeight, font-300);
+                }
+            }
+
+        }
+    }
+
+    .more {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        flex: 1 0;
+
+        img {
+            width: 100%;
+        }
     }
 }
+.second-section {
+    height: 100%;
+    ul {
+        height: 100%;
+        li {
+            height: 100%;
+            border-left: .1rem solid map-get($color , gray-03);
+            display: flex;
+            align-items: center;
+        }
+    }
+    .box {
+        display: flex;
+        gap: 7rem;
+        flex-direction: column;
+        .year {
+            font-family: 'safiroregular';
+            font-weight: map-get($fontWeight, 300);
+            font-size: map-get($fontSize, font-14);
+            color: map-get($color, whtie);
+        }
+    }
+    .information {
+        .img {
+            width: 47rem;
+            height: 48rem;
+            background-color: #535353;
+            img {
+                width: 47rem;
+                height: 48rem;
+                background-color: #535353;
+            }
+        }   
+        .img-text {
+            .img-title {
+                font-size: 3.4rem;
+            }
+            .tech {
+                font-size: map-get($fontSize, font-16);
+            }
+            .degree {
+                font-size: map-get($fontSize, font-14);
+            }
+        }
+    }
+}
+
 
 .last {
     height: 100vh;
