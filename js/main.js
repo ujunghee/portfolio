@@ -1,4 +1,4 @@
-// 메인 포트폴리오 텍스트 부분 수정
+// 메인 포트폴리오 타이틀 이벤트
 const titleText = document.querySelector('.main .left h2')
 const rightText = document.querySelectorAll('.right p')
 
@@ -10,11 +10,26 @@ setTimeout(() => {
   rightText.forEach((item, index) => {
     setTimeout(() => {
       item.style.transform = 'translate3d(0, 0, 0)'
+      // 스크롤 부드러운 js 라이브러리 
+      const lenis = new Lenis()
+      
+      function raf(time) {
+        lenis.raf(time)
+        requestAnimationFrame(raf)
+      }
+      
+      requestAnimationFrame(raf)
     }, 100 * index)
   })
 }, 7100)
 
+
 // 가로스크롤
+window.addEventListener('load', dimBox)
+window.addEventListener('resize', () => {
+  horizontalScroll(),
+  dimBox()
+})
 
 // 페이지 로드 시와 리사이즈 시 높이 계산
 function dimBox() {
@@ -28,13 +43,6 @@ function dimBox() {
   const stickyParent = document.querySelector('.sticky-parent');
   stickyParent.style.height = `${totalWidth}px`; 
 }
-
-// 이벤트 리스너 등록
-window.addEventListener('load', dimBox)
-window.addEventListener('resize', () => {
-  horizontalScroll(),
-  dimBox()
-})
 
 // 기존의 가로 스크롤 함수
 function horizontalScroll() {

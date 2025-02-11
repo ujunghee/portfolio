@@ -81,7 +81,6 @@ var bar = new ProgressBar.Circle('.splash', {
           item.style.transform = transform 
           item.style.opacity = '1'
           item.style.visibility = 'visible'
-          body.style.overflow = "auto"
           // ''
         }
       }, ms * index)
