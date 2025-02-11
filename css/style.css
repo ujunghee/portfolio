@@ -14,7 +14,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "safirobold", "SUIT", sans-serif;
+  font-family: "safiroregular", "SUIT", sans-serif;
   vertical-align: baseline;
 }
 
@@ -82,7 +82,7 @@ time, mark, audio, video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: "safirobold", "SUIT", sans-serif;
+  font-family: "safiroregular", "SUIT", sans-serif;
   vertical-align: baseline;
 }
 
@@ -246,6 +246,7 @@ header .logo {
   opacity: 0;
   transition: 0.3s cubic-bezier(0.59, -0.01, 0.1, 1);
   overflow: hidden;
+  gap: 0.2rem;
 }
 header .logo span {
   font-family: "safiromedium";
@@ -379,7 +380,7 @@ header .logo.slide-up span {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  flex: 1 0;
+  flex: 1 0 50%;
 }
 .sticky-parent .more img {
   width: clamp(30rem, 30vw, 30vw);
@@ -446,6 +447,83 @@ header .logo.slide-up span {
 .second-section .information .img-text .degree {
   color: #686868;
   font-size: 1.4rem;
+}
+
+.third-section {
+  padding-right: 20rem;
+}
+.third-section .career {
+  display: flex;
+  height: 100%;
+  gap: 20rem;
+}
+.third-section .career h4 {
+  font-size: 5rem;
+  color: #fff;
+  text-transform: uppercase;
+  width: 80vw;
+  min-width: 50rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.third-section .career h5 {
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 300;
+  text-transform: uppercase;
+}
+.third-section .career-timeline {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 9vh;
+  min-width: 30rem;
+  max-width: 50rem;
+  width: 50vw;
+}
+.third-section .career-list {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3.2rem;
+}
+.third-section .career-list dl {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.third-section .career-list dt {
+  color: #fff;
+}
+.third-section .career-list dt time {
+  font-size: 2.5rem;
+  font-family: "safiroregular";
+}
+.third-section .career-list h6 {
+  font-size: 1.6rem;
+  color: #AEAEAE;
+  font-weight: 400;
+}
+.third-section .career .skill {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.third-section .career .skill h5 {
+  font-size: 1.6rem;
+  color: #686868;
+}
+.third-section .career .skill ul {
+  display: flex;
+  gap: 2rem;
+}
+.third-section .career .skill ul li {
+  font-size: 1.6rem;
+  color: #fff;
+  text-transform: uppercase;
 }
 
 .last {
