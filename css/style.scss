@@ -92,7 +92,7 @@ header {
                 background-color: inherit;
                 color: map-get($color, whtie);
                 transform: translate3d(0px, -2rem, 0);
-                font-size: clamp(1.6rem, 3vw, 1.2vw);
+                font-size: clamp(1.6rem, 3vw, 1.8rem);
                 cursor: pointer;
                 opacity: 0;
                 visibility: hidden;
@@ -124,7 +124,7 @@ header {
             color: map-get($color, whtie);
             text-transform: uppercase;
             opacity: 0;
-            font-size: clamp(1.6rem, 3vw, 1.2vw);
+            font-size: clamp(1.6rem, 3vw, 1.8rem);
             transform: translateY(-20rem);
             transition: $transition-ease-in-out-06;
             transition-delay: 0.2s; 
@@ -153,7 +153,7 @@ header {
     top:0;
     left: 0;
     pointer-events: none; 
-    transition: .2s; 
+    // transition: .1s; 
     z-index: 10;
     &:hover {
         mix-blend-mode: difference;
@@ -194,7 +194,7 @@ header {
             transform: translate3d(0, 10vh, 0);
             font-family: 'safiroregular';
             color: map-get($color , whtie);
-            font-size: clamp(1.4rem, 5vw, 1.6rem);
+            font-size: clamp(1.6rem, 2vw, 2rem);
         }
     }
 }
@@ -208,6 +208,7 @@ header {
         max-height: 100vh;
         overflow-x: hidden;
         overflow-y: hidden;
+        transition: $transition-ease-in-out-06;
     }
 
     .dim {
@@ -221,6 +222,7 @@ header {
     .horizontal {
         display: flex;
         flex-direction: row;
+        transition: $transition-ease-in-out-06;
     }
 
     .br {
@@ -229,16 +231,17 @@ header {
 
     // 첫번쨰 섹션
     .first-section {
-        padding: 0 0 0 8rem;
+        padding: 0 8rem 0 8rem;
         box-sizing: border-box;
         display: flex;
+        transition: $transition-ease-in-out-06;
 
         .right {
             display: flex;
             justify-content: center;
             flex-direction: column;
             gap: 10rem;
-
+            flex: 1 0 50%;
             .title {
                 display: flex;
                 flex-direction: column;
@@ -247,9 +250,10 @@ header {
                 .hidden {
                     p {
                         font-family: 'SUIT', sans-serif;
-                        font-size: map-get($fontSize, font-50);
+                        font-size: clamp(5rem, 4vw, 7.6rem);
                         color: map-get($color, whtie);
-                        font-weight: map-get($fontWeight, font-700);
+                        font-weight: map-get($fontWeight, font-800);
+                        display: inline;
                     }
                 }
             }
@@ -257,9 +261,9 @@ header {
             .sub-title {
 
                 p {
-                    line-height: 2.5rem;
+                    line-height: 2.8rem;
                     font-family: 'SUIT', sans-serif;
-                    font-size: map-get($fontSize, font-16);
+                    font-size: clamp(1.5rem, 1vw, 1.8rem);
                     color: map-get($color, whtie);
                     font-weight: map-get($fontWeight, font-300);
                 }
@@ -270,12 +274,12 @@ header {
 
     .more {
         display: flex;
-        justify-content: start;
+        justify-content: flex-end;
         align-items: center;
         flex: 1 0;
 
         img {
-            width: 100%;
+            width: clamp(30rem, 30vw, 30vw);
         }
     }
 }
@@ -301,7 +305,7 @@ header {
         .year {
             font-family: 'safiroregular';
             font-weight: map-get($fontWeight, 300);
-            font-size: map-get($fontSize, font-14);
+            font-size: map-get($fontSize, font-25);
             color: map-get($color, whtie);
         }
     }
@@ -321,20 +325,24 @@ header {
             flex-direction: column;
             display: flex;
             position: absolute;
-            bottom: -6rem;
+            bottom: -7.2rem;
+            gap: 1.2rem;
+            padding-left: 1.6rem;
             .img-title {
                 color: map-get($color, whtie);
-                font-size: 3.4rem;
+                font-size: map-get($fontSize, font-34);
+                font-weight: map-get($fontWeight, font-800);
                 flex-direction: column;
                 display: flex;
-                gap: 1.2rem;
+                gap: .6rem;
             }
             .tech {
-                color: map-get($color, whtie);
-                font-size: map-get($fontSize, font-16);
+                color: map-get($color, gray-01);
+                font-weight: map-get($fontWeight, font-300);
+                font-size: map-get($fontSize, font-20);
             }
             .degree {
-                color: map-get($color, whtie);
+                color: map-get($color, gray-02);
                 font-size: map-get($fontSize, font-14);
             }
         }

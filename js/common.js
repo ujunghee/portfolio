@@ -23,15 +23,6 @@ window.onload = function() {
     }, 100)
 }
 
-// 스크롤 부드러운 js 라이브러리 
-const lenis = new Lenis()
-
-function raf(time) {
-  lenis.raf(time)
-  requestAnimationFrame(raf)
-}
-
-requestAnimationFrame(raf)
 
 //버튼 이벤트    
 const buttons = document.querySelectorAll('button , a, span, p, h1, h2')
@@ -48,6 +39,7 @@ buttons.forEach(button => {
     }
 })
 
+//헤더 메뉴 이벤트
 const headerButton = document.querySelectorAll('header .menu li button')
 
 headerButton.forEach(button => {
