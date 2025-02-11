@@ -209,6 +209,7 @@ header .navigation {
   min-height: 5rem;
   position: fixed;
   width: 100%;
+  z-index: 1;
 }
 header .menu {
   display: flex;
