@@ -348,27 +348,38 @@ header {
         }   
     }
 }
+.c-txt {
+    width: 100vw;
+    display: flex;
+    padding: 0 0 0 40rem;
+    h4 {
+        font-size: map-get($fontSize , font-50);
+        color: map-get($color, whtie);
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20rem;
+        width: 100%;
+    }
+}
 .third-section {
-    padding-right: 20rem;
     .career {
         display: flex;
         height: 100%;
-        gap: 20rem;
-        h4 {
-            font-size: map-get($fontSize , font-50);
-            color: map-get($color, whtie);
-            text-transform: uppercase;
-            width: 80vw;
-            min-width: 50rem;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+        justify-content: center;
+        align-items: center;
         h5 {
             font-size: map-get($fontSize , font-25);
             color: map-get($color, whtie);
             font-weight: map-get($fontWeight, font-300);
             text-transform: uppercase;
+        }
+        .width {
+            width: 100vh;
+            display: flex;
+            flex-direction: row;
+            gap: 20rem;
         }
         &-timeline {
             display: flex;

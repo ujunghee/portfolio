@@ -449,29 +449,39 @@ header .logo.slide-up span {
   font-size: 1.4rem;
 }
 
-.third-section {
-  padding-right: 20rem;
-}
-.third-section .career {
+.c-txt {
+  width: 100vw;
   display: flex;
-  height: 100%;
-  gap: 20rem;
+  padding: 0 0 0 40rem;
 }
-.third-section .career h4 {
+.c-txt h4 {
   font-size: 5rem;
   color: #fff;
   text-transform: uppercase;
-  width: 80vw;
-  min-width: 50rem;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 0 20rem;
+  width: 100%;
+}
+
+.third-section .career {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
 }
 .third-section .career h5 {
   font-size: 2.5rem;
   color: #fff;
   font-weight: 300;
   text-transform: uppercase;
+}
+.third-section .career .width {
+  width: 100vh;
+  display: flex;
+  flex-direction: row;
+  gap: 20rem;
 }
 .third-section .career-timeline {
   display: flex;
