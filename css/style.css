@@ -188,7 +188,6 @@ table {
 }
 
 header {
-  padding: 0rem 8rem;
   box-sizing: border-box;
   transition: 0.3s cubic-bezier(0.59, -0.01, 0.1, 1);
 }
@@ -201,11 +200,15 @@ header {
   }
 }
 header .navigation {
+  padding: 0rem 8rem;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
   min-height: 5rem;
+  position: fixed;
+  width: 100%;
 }
 header .menu {
   display: flex;
@@ -286,7 +289,7 @@ header .logo.slide-up span {
 
 .main {
   width: 100%;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   padding: 0rem 8rem;
