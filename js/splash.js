@@ -13,6 +13,7 @@ style.textContent = `
 `
 document.head.appendChild(style)
 
+// 로딩
 var bar = new ProgressBar.Circle('.splash', {
     strokeWidth: 1,
     trailWidth: 1,
@@ -56,6 +57,7 @@ var bar = new ProgressBar.Circle('.splash', {
   bar.animate(1.0)
 
 
+  // 로고 이벤트
   const splashLogo = document.querySelectorAll('.splash-logo span')
   const splashBg = document.querySelector('.s-l-wrap')
   const logoSpans = document.querySelectorAll('.logo span')

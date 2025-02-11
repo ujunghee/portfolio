@@ -119,6 +119,7 @@ header {
         opacity: 0;
         transition: $transition-ease-in-out-03;
         overflow: hidden;
+        gap: .2rem;
         span {
             font-family: 'safiromedium';
             color: map-get($color, whtie);
@@ -276,8 +277,7 @@ header {
         display: flex;
         justify-content: flex-end;
         align-items: center;
-        flex: 1 0;
-
+        flex: 1 0 50%;
         img {
             width: clamp(30rem, 30vw, 30vw);
         }
@@ -320,30 +320,109 @@ header {
                 height: 48rem;
                 background-color: #535353;
             }
-        }   
-        .img-text {
-            flex-direction: column;
-            display: flex;
-            position: absolute;
-            bottom: -7.2rem;
-            gap: 1.2rem;
-            padding-left: 1.6rem;
-            .img-title {
-                color: map-get($color, whtie);
-                font-size: map-get($fontSize, font-34);
-                font-weight: map-get($fontWeight, font-800);
+            &-text {
                 flex-direction: column;
                 display: flex;
-                gap: .6rem;
+                position: absolute;
+                bottom: -7.2rem;
+                gap: 1.2rem;
+                padding-left: 1.6rem;
+                .img-title {
+                    color: map-get($color, whtie);
+                    font-size: map-get($fontSize, font-34);
+                    font-weight: map-get($fontWeight, font-800);
+                    flex-direction: column;
+                    display: flex;
+                    gap: .6rem;
+                }
+                .tech {
+                    color: map-get($color, gray-01);
+                    font-weight: map-get($fontWeight, font-300);
+                    font-size: map-get($fontSize, font-20);
+                }
+                .degree {
+                    color: map-get($color, gray-02);
+                    font-size: map-get($fontSize, font-14);
+                }
             }
-            .tech {
+        }   
+    }
+}
+.third-section {
+    padding-right: 20rem;
+    .career {
+        display: flex;
+        height: 100%;
+        gap: 20rem;
+        h4 {
+            font-size: map-get($fontSize , font-50);
+            color: map-get($color, whtie);
+            text-transform: uppercase;
+            width: 80vw;
+            min-width: 50rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        h5 {
+            font-size: map-get($fontSize , font-25);
+            color: map-get($color, whtie);
+            font-weight: map-get($fontWeight, font-300);
+            text-transform: uppercase;
+        }
+        &-timeline {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            gap: 9vh;    
+            min-width: 30rem;
+            max-width: 50rem;
+            width: 50vw;
+        }
+        &-list {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            flex-direction: column;
+            gap: 3.2rem;
+            dl {
+                display: flex;
+                flex-direction: column;
+                gap: .8rem;
+            }
+            dt {
+                color: map-get($color, whtie);
+                time {
+                    font-size: map-get($fontSize , font-25);
+                    font-family: "safiroregular";
+                }
+            }
+            dd {
+
+            }
+            h6 {
+                font-size: map-get($fontSize , font-16);
                 color: map-get($color, gray-01);
-                font-weight: map-get($fontWeight, font-300);
-                font-size: map-get($fontSize, font-20);
+                font-weight: map-get($fontWeight, font-400 );
             }
-            .degree {
+        }
+        .skill {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            h5 {
+                font-size: map-get($fontSize , font-16);
                 color: map-get($color, gray-02);
-                font-size: map-get($fontSize, font-14);
+            }
+            ul {
+                display: flex;
+                gap: 2rem;
+                li {
+                    font-size: map-get($fontSize, font-16);
+                    color: map-get($color, whtie);
+                    text-transform: uppercase;
+                }
             }
         }
     }
