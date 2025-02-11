@@ -81,7 +81,7 @@ header {
         min-height:5rem;
         position: fixed;
         width: 100%;
-        
+        z-index: 1;
     }
     .menu {
         display: flex;
