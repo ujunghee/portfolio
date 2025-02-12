@@ -89,6 +89,9 @@ header {
         li {
             overflow: hidden;
             position: relative;
+            opacity: 0;
+            transform: translate3d(0px, -3rem, 0px);
+            transition: $transition-ease-in-out-06;
             .hidden p {
                 font-family: 'safiroregular';
                 border: none;

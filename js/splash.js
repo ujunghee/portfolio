@@ -61,7 +61,7 @@ var bar = new ProgressBar.Circle('.splash', {
   const splashLogo = document.querySelectorAll('.splash-logo span')
   const splashBg = document.querySelector('.s-l-wrap')
   const logoSpans = document.querySelectorAll('.logo span')
-  const menuLis = document.querySelectorAll('.menu li button')
+  const menuLis = document.querySelectorAll('.menu li')
 
   function logoSpan(className, number, name, transform, ms) {
     className.forEach((item, index) => {
