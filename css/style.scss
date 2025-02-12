@@ -60,7 +60,11 @@
 // 헤더
 header {
     box-sizing: border-box;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
     transition: $transition-ease-in-out-03;
+    background: black;
     @include respond-to(tablet) {
         padding: 0rem 1.6rem;
         .menu {
@@ -77,11 +81,7 @@ header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        height: 10vh;
-        min-height:5rem;
-        position: fixed;
-        width: 100%;
-        z-index: 1;
+        min-height:3rem;
     }
     .menu {
         display: flex;
@@ -89,7 +89,7 @@ header {
         li {
             overflow: hidden;
             position: relative;
-            button {
+            .hidden p {
                 font-family: 'safiroregular';
                 border: none;
                 background-color: inherit;
@@ -101,15 +101,37 @@ header {
                 visibility: hidden;
                 transition: $transition-ease-in-out-06;
             }
+            a {
+                height: 1.6rem;
+                display: block;
+                width: 100%;
+                padding: 0 .1rem;
+                .auto-hddien {
+                    display: flex;
+                    flex-direction: row;
+                    gap: .08rem;
+                }
+                .auto {
+                    transition: $transition-ease-in-out-06;
+                    overflow: hidden;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    flex-direction: column;
+                }
+                .hidden {
+                    transition: $transition-ease-in-out-06;
+                    overflow: hidden;
+                    position: relative;
+                }
+            }
             span {
-                position: absolute;
-                bottom: 0;
-                width: 0;
-                height: 0.1rem;
-                background: #fff;
-                left: 50%;
-                transform: translateX(-50%);
+                color: map-get($color, whtie);
+                font-size: map-get($fontSize , font-16);
+                font-weight: map-get($fontWeight, font-600);
                 transition: $transition-ease-in-out-06;
+                width: 100%;
             }
         }
     }
@@ -123,6 +145,7 @@ header {
         transition: $transition-ease-in-out-03;
         overflow: hidden;
         gap: .2rem;
+        padding:.1rem;
         span {
             font-family: 'safiromedium';
             color: map-get($color, whtie);
