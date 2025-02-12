@@ -70,20 +70,36 @@ window.onload = function () {
 }
 
 //헤더 메뉴 이벤트
-const headerButton = document.querySelectorAll('header .menu li button')
+const headerButton = document.querySelectorAll('header .menu li a')
+const auto = document.querySelectorAll("header .menu li .auto")
+const hidden = document.querySelectorAll("header .menu li .hidden")
 
 headerButton.forEach(button => {
     const parentLi = button.closest('li')
-    const span = parentLi.querySelector('span')
+    const auto = parentLi.querySelector('.auto')
+    const hidden = parentLi.querySelector('.hidden')
+    const span = parentLi.querySelectorAll('span')
 
     button.addEventListener('mouseout', () => {
-        span.style.width = "0"
-        span.style.backgroundColor = "#000"
+//        auto.style.transform = "translate3d(0, 0, 0)"
+ //       hidden.style.transform = "translate3d(0, 0, 0)"
+        span.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.transform = "translate3d(0, 0, 0)"
+            }, index  * 10)
+        }, 100)
+        // span.style.backgroundColor = "#000"
     })
 
     button.addEventListener('mouseover', () => {
-        span.style.width = "calc(100% - 1rem)"
-        span.style.backgroundColor = "#fff"
+//        auto.style.transform = "translate3d(0, -100%, 0)"
+ //       hidden.style.transform = "translate3d(0, -100%, 0)"
+        span.forEach((item, index) => {
+            setTimeout(() => {
+                item.style.transform = "translate3d(0, -100%, 0)"
+            }, index  * 10)
+        }, 100)
+        // span.style.backgroundColor = "#fff"
     })
 
 })
