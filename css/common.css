@@ -40,6 +40,7 @@ body {
   line-height: 1;
   background-color: #0E0E0E;
   overflow: hidden;
+  transition: 0.3s;
 }
 
 menu, ol, ul {

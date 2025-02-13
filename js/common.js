@@ -67,6 +67,12 @@ window.onload = function () {
     setTimeout(function () {
         scrollTo(0, 0)
     }, 100)
+    // let sticky = document.querySelectorAll('sticky')
+    // if(sticky) {
+    //     sticky.scrollLeft = 0
+    // }
+    //스크롤 복원
+    history.scrollRestoration = 'manual'
 }
 
 //헤더 메뉴 이벤트
