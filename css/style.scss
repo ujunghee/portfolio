@@ -242,7 +242,6 @@ header {
     }
 
     .dim {
-        display: block;
         // width: 100vh;
         flex: 1 0 100%;
         // min-width: 100vw;
@@ -314,7 +313,8 @@ header {
 }
 .second-section {
     height: 100%;
-    padding-left: 25rem;
+    padding-left: 25rem;    
+    justify-content: space-evenly;
     ul {
         height: 100%;
         gap: 12rem;
@@ -340,10 +340,14 @@ header {
     }
     .information {
         .img {
-            width: 37rem;
-            height: 37rem;
+            width: 35vw;
+            height: 35vw;
             background-color: #535353;
             position: relative;
+            max-width: 60rem;
+            max-height: 60rem;
+            min-width: 40rem;
+            min-height: 40rem;
             img {
                 width: 47rem;
                 height: 48rem;
@@ -377,48 +381,43 @@ header {
         }   
     }
 }
-.c-txt {
-    width: 100vw;
-    display: flex;
-    padding: 0 0 0 40rem;
-    h4 {
-        font-size: map-get($fontSize , font-50);
-        color: map-get($color, whtie);
-        text-transform: uppercase;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20rem;
-        width: 100%;
-    }
-}
 .third-section {
+    display: flex;
+    justify-content: space-evenly;
+    .c-txt {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h4 {
+            font-size: clamp(3rem, 3vw, 8rem);
+            color: map-get($color, whtie);
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    }
     .career {
         display: flex;
         height: 100%;
         justify-content: center;
         align-items: center;
         h5 {
-            font-size: map-get($fontSize , font-25);
+            font-size: clamp(2.4rem, 2.5vw, 4.4rem);
             color: map-get($color, whtie);
-            font-weight: map-get($fontWeight, font-300);
+            font-weight: map-get($fontWeight, font-700);
             text-transform: uppercase;
         }
         .width {
-            width: 100vh;
             display: flex;
             flex-direction: row;
-            gap: 20rem;
+            justify-content: flex-start;
+            gap: clamp(6rem, 10vw, 12vw);
         }
         &-timeline {
             display: flex;
-            align-items: flex-start;
-            justify-content: center;
             flex-direction: column;
-            gap: 9vh;    
-            min-width: 30rem;
-            max-width: 50rem;
-            width: 50vw;
+            gap: 4rem;
         }
         &-list {
             display: flex;
@@ -442,7 +441,7 @@ header {
 
             }
             h6 {
-                font-size: map-get($fontSize , font-16);
+                font-size: clamp(1.6rem, 1vw, 2rem);
                 color: map-get($color, gray-01);
                 font-weight: map-get($fontWeight, font-400 );
             }
@@ -450,7 +449,8 @@ header {
         .skill {
             width: 100%;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 2rem;
             h5 {
                 font-size: map-get($fontSize , font-16);
                 color: map-get($color, gray-02);
