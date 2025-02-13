@@ -90,9 +90,6 @@ function horizontalScroll() {
       item.style.color = "#fff"
     })
   }
-  window.onload = function () {
-    
-  }
 }
 
 document.addEventListener('scroll', horizontalScroll)
