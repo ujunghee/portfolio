@@ -112,7 +112,7 @@ header {
                 .auto-hddien {
                     display: flex;
                     flex-direction: row;
-                    gap: .08rem;
+                    gap: .04rem;
                 }
                 .auto {
                     transition: $transition-ease-in-out-06;
@@ -147,7 +147,7 @@ header {
         opacity: 0;
         transition: $transition-ease-in-out-03;
         overflow: hidden;
-        gap: .2rem;
+        gap: .05rem;
         padding:.1rem;
         span {
             font-family: 'safiromedium';
@@ -167,6 +167,15 @@ header {
                 opacity: 1;
             }
         }
+    }
+    .line {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: .1rem;
+        background-color: #ECEAFA;
+        transition: $transition-ease-in-out-06;
     }
 }
 
@@ -383,7 +392,7 @@ header {
 }
 .third-section {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     .c-txt {
         display: flex;
         justify-content: center;
@@ -417,14 +426,15 @@ header {
         &-timeline {
             display: flex;
             flex-direction: column;
-            gap: 4rem;
+            gap: 10rem;
         }
         &-list {
             display: flex;
             align-items: flex-start;
-            justify-content: center;
+            justify-content: flex-start;
             flex-direction: column;
             gap: 3.2rem;
+            flex: 1;
             dl {
                 display: flex;
                 flex-direction: column;
@@ -441,7 +451,7 @@ header {
 
             }
             h6 {
-                font-size: clamp(1.6rem, 1vw, 2rem);
+                font-size: 1.6rem;
                 color: map-get($color, gray-01);
                 font-weight: map-get($fontWeight, font-400 );
             }
@@ -468,8 +478,68 @@ header {
     }
 }
 
-
-.last {
+// footer
+.bottom {
     height: 100vh;
     width: 100%;
+    position: relative;
+    overflow: hidden;
+    .sns {
+        display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            gap: 4vw;
+            height: calc(100% - 226px);
+        a {
+            color: map-get($color, black-01);
+            font-size: map-get($fontSize , font-25);
+            text-decoration: underline;
+        }
+    }
+    &-infor {
+        display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0rem 8rem 7.6rem;
+            z-index: 1;
+            position: relative;
+        .watching-txt {
+            display: flex;
+            flex-direction: column;
+            color: map-get($color, black-01);
+            div {
+                font-size: 5rem;
+                font-weight: map-get($fontWeight,font-600);
+                text-transform: uppercase;
+            }
+        }
+        .loop {
+            ul {
+                display: flex;
+                overflow: hidden;
+                flex-direction: column;
+                align-items: center;
+                height: 2rem;
+                li {
+                    font-size: map-get($fontSize, font-20);
+                    font-weight: map-get($fontWeight,font-500);
+                }
+            }
+        }
+        .yeartxt {
+            time {
+                font-size: 5rem;
+                font-weight: map-get($fontWeight,font-500 );
+            }
+        }
+    }
+    .bg {
+        background: radial-gradient(circle, rgb(220, 221, 255) 10%, rgba(220, 221, 255, 0) 40%);
+        position: absolute;
+        bottom: -50%;
+        height: 100%;
+        width: 100%;
+        transition: $transition-ease-in-out-03;
+    }
 }

@@ -33,32 +33,68 @@ window.addEventListener('resize', () => {
 
 // 페이지 로드 시와 리사이즈 시 높이 계산
 function dimBox() {
-  const dims = document.querySelectorAll('.dim');
-  let totalWidth = 0;
+  const dims = document.querySelectorAll('.dim')
+  let totalWidth = 0
 
   dims.forEach(dim => {
-    totalWidth += dim.offsetWidth;
+    totalWidth += dim.offsetWidth
   })
   
-  const stickyParent = document.querySelector('.sticky-parent');
-  stickyParent.style.height = `${totalWidth}px`; 
+  const stickyParent = document.querySelector('.sticky-parent')
+  stickyParent.style.height = `${totalWidth}px` 
 }
 
 // 기존의 가로 스크롤 함수
 function horizontalScroll() {
   let sticky = document.querySelector('.sticky')
   let stickyParent = document.querySelector('.sticky-parent')
-  
+  let body = document.querySelector("body")
+  let footer = document.querySelector("footer")
+  let header = document.querySelector('header')
+  let headerSpan = document.querySelectorAll("header span")
+  let line = document.querySelector("header .line")
+  let bg = document.querySelector(".bottom .bg")
+
+
   let scrollWidth = sticky.scrollWidth
   let verticalScrollHeight = stickyParent.getBoundingClientRect().height - sticky.getBoundingClientRect().height
   let stickyPosition = sticky.getBoundingClientRect().top
-  
+
+  let footerRect = footer.getBoundingClientRect()
+  let footerHeight = footer.offsetHeight
+  let isFooterVisible = (footerRect.top + footerHeight <= window.innerHeight + 100)
+
+
   if(stickyPosition > 1) {
     return
-  } else {
+  }else {
     let scrolled = stickyParent.getBoundingClientRect().top
     sticky.scrollLeft = (scrollWidth / verticalScrollHeight) * (-scrolled) * 0.85
+  } 
+  if(isFooterVisible) {
+    body.style.background = "#F8F8FF"
+    header.style.background = "#F8F8FF"
+    line.style.width = "100%"
+    line.style.background = "#ECEAFA"
+    bg.style.opacity ="1"
+    headerSpan.forEach(item => {
+      item.style.color = "#232129"
+    })
+  } else {
+    body.style.background = "#0E0E0E"
+    header.style.background = "#000"
+    line.style.width = "0"
+    line.style.background = "#000"
+    bg.style.opacity ="0"
+    headerSpan.forEach(item => {
+      item.style.color = "#fff"
+    })
+  }
+  window.onload = function () {
+    
   }
 }
 
 document.addEventListener('scroll', horizontalScroll)
+
+// loop 반복 재생 setInterval 

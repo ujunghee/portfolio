@@ -70,6 +70,7 @@ body {
 	line-height: 1;
     background-color: map-get($color, black-01);
     overflow: hidden;
+    transition: .3s;
 }
 menu, ol, ul {
 	list-style: none;
