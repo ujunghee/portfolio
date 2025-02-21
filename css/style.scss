@@ -62,6 +62,7 @@ header {
     box-sizing: border-box;
     position: fixed;
     width: 100%;
+    padding: 0rem 8rem;
     z-index: 1;
     transition: $transition-ease-in-out-03;
     background: black;
@@ -76,7 +77,6 @@ header {
         }
     }
     .navigation {
-        padding: 0rem 8rem;
         box-sizing: border-box;
         display: flex;
         justify-content: space-between;
@@ -254,11 +254,17 @@ header {
         // width: 100vh;
         flex: 1 0 100%;
         // min-width: 100vw;
-        height: 100vh;
+        height: 100vh;    
+        display: flex;
+        flex-direction: column;
     }
 
     .horizontal {
         display: flex;
+        height: calc(100vh - 3rem);
+        top: 3rem;
+        left: 1.6rem;
+        position: relative;
         flex-direction: row;
         transition: $transition-ease-in-out-06;
     }
@@ -273,13 +279,16 @@ header {
         box-sizing: border-box;
         display: flex;
         transition: $transition-ease-in-out-06;
-
+        flex-direction: column;
+        @include respond-to(tablet) {
+            padding: 0rem 1.6rem;
+        }
         .right {
             display: flex;
             justify-content: center;
             flex-direction: column;
             gap: 10rem;
-            flex: 1 0 50%;
+            flex: .94;
             .title {
                 display: flex;
                 flex-direction: column;
@@ -297,7 +306,6 @@ header {
             }
 
             .sub-title {
-
                 p {
                     line-height: 2.8rem;
                     font-family: 'SUIT', sans-serif;
@@ -306,7 +314,28 @@ header {
                     font-weight: map-get($fontWeight, font-300);
                 }
             }
-
+        }
+        .underline {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: flex-end;
+            gap: 2rem;
+            .more {
+                p {
+                    font-family: 'safiroregular';
+                    font-size: clamp(1.4rem, 2vw, 2rem);
+                    color: map-get($color, whtie);
+                    font-weight: map-get($fontWeight, font-300);
+                    text-transform: uppercase;
+                }
+            }
+            .underline {
+                width: 100%;
+                height: .1rem;
+                background-color: #333;
+            }
+            
         }
     }
 
@@ -324,43 +353,70 @@ header {
     height: 100%;
     padding-left: 25rem;    
     justify-content: space-evenly;
+    .top {
+            display: flex;
+            gap: 1.2rem;
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            padding: 8vw 3vw 0;
+            box-sizing: border-box;
+            justify-content: space-between;
+        .title {
+            display: flex;
+            flex-direction: column;
+            p {
+                font-size: clamp(2rem, 10vw, 7rem);
+                font-weight: map-get($fontWeight, font-300);
+                color: map-get($color, whtie);
+            }
+        }
+        .sub-title {
+            font-weight: map-get($fontWeight, font-300);
+            line-height: 2.8rem;
+            color: map-get($color, whtie);
+            p {
+                font-size: clamp(1.6rem, 5vw, 1.8rem);
+            }
+        }
+            
+    }
     ul {
         height: 100%;
-        gap: 12rem;
+        gap: 3vw;
         display: flex;
         flex-direction: row;
         li {
             height: 100%;
-            border-left: .1rem solid map-get($color , gray-03);
             display: flex;
-            align-items: center;
+            align-items: flex-end;
         }
     }
     .box {
         display: flex;
-        gap: 7rem;
+        gap: 2rem;
         flex-direction: column;
-        .year {
-            font-family: 'safiroregular';
-            font-weight: map-get($fontWeight, 300);
-            font-size: map-get($fontSize, font-25);
+        .img-title {
             color: map-get($color, whtie);
+            font-size: map-get($fontSize, font-34);
+            font-weight: 200;
+            flex-direction: column;
+            display: flex;
+            gap: .6rem;
         }
-    }
-    .information {
         .img {
-            width: 35vw;
-            height: 35vw;
+            width: 50vw;
+            height: 24vw;
             background-color: #535353;
             position: relative;
-            max-width: 60rem;
-            max-height: 60rem;
-            min-width: 40rem;
-            min-height: 40rem;
+            max-width: 80rem;
+            max-height: 50rem;
+            min-width: 50rem;
+            min-height: 30rem;
             img {
                 width: 47rem;
                 height: 48rem;
-                background-color: #535353;
             }
             &-text {
                 flex-direction: column;
@@ -369,26 +425,10 @@ header {
                 bottom: -7.2rem;
                 gap: 1.2rem;
                 padding-left: 1.6rem;
-                .img-title {
-                    color: map-get($color, whtie);
-                    font-size: map-get($fontSize, font-34);
-                    font-weight: map-get($fontWeight, font-800);
-                    flex-direction: column;
-                    display: flex;
-                    gap: .6rem;
-                }
-                .tech {
-                    color: map-get($color, gray-01);
-                    font-weight: map-get($fontWeight, font-300);
-                    font-size: map-get($fontSize, font-20);
-                }
-                .degree {
-                    color: map-get($color, gray-02);
-                    font-size: map-get($fontSize, font-14);
-                }
             }
         }   
     }
+   
 }
 .third-section {
     display: flex;
@@ -397,8 +437,11 @@ header {
         display: flex;
         justify-content: center;
         align-items: center;
+        @include respond-to(tablet) {
+            display: none;
+        }
         h4 {
-            font-size: clamp(3rem, 3vw, 8rem);
+            font-size: clamp(2rem, 3vw, 8rem);
             color: map-get($color, whtie);
             text-transform: uppercase;
             display: flex;
@@ -412,7 +455,7 @@ header {
         justify-content: center;
         align-items: center;
         h5 {
-            font-size: clamp(2.4rem, 2.5vw, 4.4rem);
+            font-size: clamp(2.4rem, 2vw, 4.4rem);
             color: map-get($color, whtie);
             font-weight: map-get($fontWeight, font-700);
             text-transform: uppercase;
@@ -421,37 +464,34 @@ header {
             display: flex;
             flex-direction: row;
             justify-content: flex-start;
-            gap: clamp(6rem, 10vw, 12vw);
+            gap: clamp(5rem, 5vw, 12vw);
         }
         &-timeline {
             display: flex;
             flex-direction: column;
-            gap: 10rem;
+            gap: 3vw;
         }
         &-list {
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
             flex-direction: column;
-            gap: 3.2rem;
+            gap: 2vw;
             flex: 1;
             dl {
                 display: flex;
                 flex-direction: column;
-                gap: .8rem;
+                gap: 1.2rem;
             }
             dt {
                 color: map-get($color, whtie);
                 time {
-                    font-size: map-get($fontSize , font-25);
+                    font-size: clamp(2rem, 1.8vw, 2.5rem);
                     font-family: "safiroregular";
                 }
             }
-            dd {
-
-            }
             h6 {
-                font-size: 1.6rem;
+                font-size: clamp(1.4rem, 1vw, 1.6rem);
                 color: map-get($color, gray-01);
                 font-weight: map-get($fontWeight, font-400 );
             }
@@ -480,56 +520,77 @@ header {
 
 // footer
 .bottom {
-    height: 100vh;
+    height: calc(100vh - 3rem);
     width: 100%;
     position: relative;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
-    .sns {
+    .snscontent {
+        width: 100%;
+        height: 100%;
         display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            gap: 4vw;
-            height: calc(100% - 226px);
-        a {
-            color: map-get($color, black-01);
-            font-size: map-get($fontSize , font-25);
-            text-decoration: underline;
+        justify-content: center;
+        align-items: center;
+        .sns {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                gap: 4vw;
+                height: calc(100% - 226px);
+            a {
+                color: map-get($color, black-01);
+                font-size: clamp(2rem, 2vw, 2.5rem);
+                text-decoration: underline;
+                flex: 1;
+                text-align: center;
+            }
         }
     }
     &-infor {
-        display: flex;
+            display: flex;
             justify-content: space-between;
             align-items: flex-end;
             padding: 0rem 8rem 7.6rem;
             z-index: 1;
-            position: relative;
+            position: absolute;
+            bottom: 0;
+            width: calc(100% - 16rem);
+            @include respond-to(tablet) {
+                padding: 0rem 1.6rem 3.8rem;
+                width: calc(100% - 3.2rem);
+            }
         .watching-txt {
+            flex: 1;
             display: flex;
             flex-direction: column;
             color: map-get($color, black-01);
             div {
-                font-size: 5rem;
+                font-size: clamp(3rem, 3vw, 5rem);
                 font-weight: map-get($fontWeight,font-600);
                 text-transform: uppercase;
             }
         }
         .loop {
+            flex: 1;
             ul {
                 display: flex;
                 overflow: hidden;
                 flex-direction: column;
                 align-items: center;
-                height: 2rem;
+                height: clamp(1.6rem, 1vw, 2rem);
+                gap: .4rem;
                 li {
-                    font-size: map-get($fontSize, font-20);
+                    font-size: clamp(1.6rem, 1vw, 2rem);
                     font-weight: map-get($fontWeight,font-500);
                 }
             }
         }
         .yeartxt {
+            flex: 1;
+            text-align: right;
             time {
-                font-size: 5rem;
+                font-size: clamp(3rem, 3vw, 5rem);
                 font-weight: map-get($fontWeight,font-500 );
             }
         }

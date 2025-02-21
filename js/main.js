@@ -54,8 +54,9 @@ function horizontalScroll() {
   let headerSpan = document.querySelectorAll("header span")
   let line = document.querySelector("header .line")
   let bg = document.querySelector(".bottom .bg")
-
-
+  let top = document.querySelector(".top")
+  let topOffset = top.offsetTop
+  
   let scrollWidth = sticky.scrollWidth
   let verticalScrollHeight = stickyParent.getBoundingClientRect().height - sticky.getBoundingClientRect().height
   let stickyPosition = sticky.getBoundingClientRect().top
@@ -64,12 +65,14 @@ function horizontalScroll() {
   let footerHeight = footer.offsetHeight
   let isFooterVisible = (footerRect.top + footerHeight <= window.innerHeight + 100)
 
-
   if(stickyPosition > 1) {
     return
   }else {
     let scrolled = stickyParent.getBoundingClientRect().top
-    sticky.scrollLeft = (scrollWidth / verticalScrollHeight) * (-scrolled) * 0.85
+    sticky.scrollLeft = -scrolled * (scrollWidth / verticalScrollHeight)
+    console.log('scrolled', scrolled)
+    console.log('footerHeight', footerHeight)
+    console.log('sticky.scrollLeft', sticky.scrollLeft)
   } 
   if(isFooterVisible) {
     body.style.background = "#F8F8FF"
