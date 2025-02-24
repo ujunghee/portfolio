@@ -330,12 +330,6 @@ header {
                     text-transform: uppercase;
                 }
             }
-            .underline {
-                width: 100%;
-                height: .1rem;
-                background-color: #333;
-            }
-            
         }
     }
 
@@ -399,7 +393,7 @@ header {
         flex-direction: column;
         .img-title {
             color: map-get($color, whtie);
-            font-size: map-get($fontSize, font-34);
+            font-size: clamp(1.6rem, 10vw, 2.4rem);
             font-weight: 200;
             flex-direction: column;
             display: flex;
@@ -601,6 +595,32 @@ header {
         bottom: -50%;
         height: 100%;
         width: 100%;
-        transition: $transition-ease-in-out-03;
+        transition: $transition-ease-in-out-06;
+        animation: bgAnimation 6s ease-in-out infinite; 
+                
+        &::before,
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(220, 221, 255, 0.6) 10%, rgba(220, 221, 255, 0) 45%);
+            animation: fadeInOut 4s ease-in-out infinite alternate;
+        }
+        &::after {
+            background: radial-gradient(circle, rgba(249, 180, 255, 0.4) 12%, rgba(180, 181, 255, 0) 40%);
+            animation-delay: -4s;
+        }
+    }
+}
+
+@keyframes fadeInOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
     }
 }

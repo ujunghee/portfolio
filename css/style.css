@@ -452,11 +452,6 @@ header .line {
   font-weight: 300;
   text-transform: uppercase;
 }
-.sticky-parent .first-section .underline .underline {
-  width: 100%;
-  height: 0.1rem;
-  background-color: #333;
-}
 .sticky-parent .more {
   display: flex;
   justify-content: flex-end;
@@ -518,7 +513,7 @@ header .line {
 }
 .second-section .box .img-title {
   color: #fff;
-  font-size: 3.4rem;
+  font-size: clamp(1.6rem, 10vw, 2.4rem);
   font-weight: 200;
   flex-direction: column;
   display: flex;
@@ -722,5 +717,29 @@ header .line {
   bottom: -50%;
   height: 100%;
   width: 100%;
-  transition: 0.3s cubic-bezier(0.59, -0.01, 0.1, 1);
+  transition: 0.6s cubic-bezier(0.51, -0.01, 0.05, 1);
+  animation: bgAnimation 6s ease-in-out infinite;
+}
+.bottom .bg::before, .bottom .bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(220, 221, 255, 0.6) 10%, rgba(220, 221, 255, 0) 45%);
+  animation: fadeInOut 4s ease-in-out infinite alternate;
+}
+.bottom .bg::after {
+  background: radial-gradient(circle, rgba(249, 180, 255, 0.4) 12%, rgba(180, 181, 255, 0) 40%);
+  animation-delay: -4s;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
