@@ -11,14 +11,17 @@ setTimeout(() => {
     setTimeout(() => {
       item.style.transform = 'translate3d(0, 0, 0)'
       // 스크롤 부드러운 js 라이브러리 
-      const lenis = new Lenis()
+      const lenis = new Lenis({
+        // 추가된 부분
+        duration: 2,
+        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      });
       
       function raf(time) {
-        lenis.raf(time)
-        requestAnimationFrame(raf)
+        lenis.raf(time);
+        requestAnimationFrame(raf);
       }
-      
-      requestAnimationFrame(raf)
+      requestAnimationFrame(raf);
     }, 100 * index)
   })
 }, 7100)
@@ -55,7 +58,6 @@ function horizontalScroll() {
   let line = document.querySelector("header .line")
   let bg = document.querySelector(".bottom .bg")
   let top = document.querySelector(".top")
-  let topOffset = top.offsetTop
   
   let scrollWidth = sticky.scrollWidth
   let verticalScrollHeight = stickyParent.getBoundingClientRect().height - sticky.getBoundingClientRect().height
@@ -69,7 +71,8 @@ function horizontalScroll() {
     return
   }else {
     let scrolled = stickyParent.getBoundingClientRect().top
-    sticky.scrollLeft = -scrolled * (scrollWidth / verticalScrollHeight)
+    let scrollProgress = -scrolled / verticalScrollHeight;
+    sticky.scrollLeft = Math.max(0, Math.min(scrollProgress * (scrollWidth - sticky.offsetWidth), scrollWidth - sticky.offsetWidth));
     console.log('scrolled', scrolled)
     console.log('footerHeight', footerHeight)
     console.log('sticky.scrollLeft', sticky.scrollLeft)
