@@ -409,6 +409,26 @@ header .line {
   color: #fff;
   font-size: clamp(1.6rem, 2vw, 2rem);
 }
+.main .scroll-alert {
+  position: absolute;
+  bottom: 5vh;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3;
+}
+.main .scroll-alert p {
+  font-family: "safiroregular";
+  color: #fff;
+  font-size: clamp(1.4rem, 2vw, 1.6rem);
+  text-align: center;
+  padding: 1rem 1.6rem;
+  display: inline;
+  background-color: rgba(45, 44, 50, 0.2705882353);
+  border-radius: 10rem;
+}
 
 .sticky-parent .sticky {
   position: sticky;

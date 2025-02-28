@@ -270,6 +270,26 @@ header {
             font-size: clamp(1.6rem, 2vw, 2rem);
         }
     }
+    .scroll-alert {
+        position: absolute;
+        bottom: 5vh;
+        left: 0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        p {
+            font-family: 'safiroregular';
+            color: map-get($color , whtie);
+            font-size: clamp(1.4rem, 2vw, 1.6rem);
+            text-align: center;
+            padding: 1rem 1.6rem;
+            display: inline;
+            background-color: #2d2c3245;
+            border-radius: 10rem;
+        }
+    }
 }
 
 .sticky-parent {
