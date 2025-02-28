@@ -30,7 +30,7 @@
 .s-l-wrap {
     width: 100%;
     height: 100vh;
-    z-index: 3;
+    z-index: 6;
     position: fixed;
     background-color: map-get($color , black-01);
     transition: $transition-ease-in-out-06;
