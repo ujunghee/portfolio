@@ -96,6 +96,9 @@ function horizontalScroll() {
       item.style.color = "#fff"
     })
   }
+  if(window.scrollY === 0) {
+    header.style.background = "inherit"
+  }
 }
 
 document.addEventListener('scroll', horizontalScroll)

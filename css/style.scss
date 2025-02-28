@@ -63,7 +63,7 @@ header {
     position: fixed;
     width: 100%;
     padding: 0rem 8rem;
-    z-index: 1;
+    z-index: 5;
     transition: $transition-ease-in-out-03;
     background: black;
     @include respond-to(tablet) {
@@ -213,8 +213,41 @@ header {
     @include respond-to(tablet) {
         padding: 0rem 1.6rem;
     }
+    .bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .cover {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            z-index: 1;
+            backdrop-filter: blur(15px) brightness(1.2);
+            background: linear-gradient(180deg, rgba(5, 21, 39, 0.87) 0%, rgba(5, 21, 39, 0.87) 100%);
+        }
+    }
+    .grd {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 50%;
+        z-index: 1;
+        background: linear-gradient(0deg, #0e0e0e 0%, rgb(14 14 14 / 59%) 50%, transparent 100%);
+    }
     .left {
         overflow: hidden;
+        z-index: 1;
         h2 {
             transition: $transition-ease-in-out-06;
             transform: translate3d(0, 10vh, 0);
@@ -228,6 +261,7 @@ header {
         flex-direction: column;
         gap: .9rem;
         overflow: hidden;
+        z-index: 1;
         p {
             transition:$transition-ease-in-out-06;
             transform: translate3d(0, 10vh, 0);
@@ -361,7 +395,7 @@ header {
             display: flex;
             flex-direction: column;
             p {
-                font-size: clamp(2rem, 10vw, 7rem);
+                font-size: clamp(2rem, 5vw, 7rem);
                 font-weight: map-get($fontWeight, font-300);
                 color: map-get($color, whtie);
             }
@@ -371,7 +405,13 @@ header {
             line-height: 2.8rem;
             color: map-get($color, whtie);
             p {
-                font-size: clamp(1.6rem, 5vw, 1.8rem);
+                font-size: 1.8rem;
+                @include respond-to(desktop) {
+                    font-size: 1.5vw;
+                }
+                @include respond-to(tablet) {
+                    display: none;
+                }
             }
         }
             
@@ -537,6 +577,7 @@ header {
                 font-size: clamp(2rem, 2vw, 2.5rem);
                 text-decoration: underline;
                 flex: 1;
+                padding: 1rem;
                 text-align: center;
             }
         }
@@ -606,11 +647,11 @@ header {
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle, rgba(220, 221, 255, 0.6) 10%, rgba(220, 221, 255, 0) 45%);
+            background: radial-gradient(circle, rgba(220, 236, 255, 0.6) 10%, rgba(220, 222, 255, 0) 45%);
             animation: fadeInOut 4s ease-in-out infinite alternate;
         }
         &::after {
-            background: radial-gradient(circle, rgba(249, 180, 255, 0.4) 12%, rgba(180, 181, 255, 0) 40%);
+            background: radial-gradient(circle, rgba(180, 190, 255, 0.4) 12%, rgba(180, 186, 255, 0) 40%);
             animation-delay: -4s;
         }
     }
